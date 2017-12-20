@@ -1,0 +1,12 @@
+[Unit]
+Description="buildbot worker"
+
+[Service]
+User=buildbot
+Group=buildbot
+WorkingDirectory=/home/buildbot
+ExecStart=/usr/local/bin/buildbot-worker start --nodaemon
+ExecStop=/usr/local/bin/buildbot-worker stop
+
+[Install]
+WantedBy=multi-user.target
